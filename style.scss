@@ -8,7 +8,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 // VARIABLES
 $navy: #091266;
 $navydarker: #00042d;
-$pinkdarker: #b5003f;
 $salmon: #fb4c4c;
 $teal: #42ffad;
 $tealdarker: #33c684;
@@ -154,7 +153,6 @@ h2 {
   overflow-y: auto;
   z-index: 4;
   transition: width 0.3s ease;
-  border-right: 2px solid $offgrey;
   ul {
     flex-direction: column;
     justify-content: center;
@@ -184,10 +182,13 @@ h2 {
 
 //target states for navigation and page-wrap
 #main-nav:target {
-  width: 20%;
+  // width: 20%;
+  width: 400px;
+  border-right: 2px solid $offgrey;
 }
 #main-nav:target + .page-wrap {
-  width: 80%;
+  // width: 80%;
+  width: calc(100% - 400px);
   .open-menu {
      display: none; 
   }
@@ -198,16 +199,17 @@ h2 {
 
 @media (max-width: 1000px) {
   #main-nav:target {
-    width: 30%;
+    width: 200px;
   }
   #main-nav:target + .page-wrap {
-    width: 70%;
+    width: calc(100% - 200px);
   }
 }
 
 @media (max-width: 550px) {
   #main-nav:target {
     width: 100%;
+    border-right: 0;
     li {
       width: 40%;
     }
